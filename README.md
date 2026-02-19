@@ -1,6 +1,6 @@
-# S-CENE: Species-Conditioned Expert Network with Environmental Fields for Species Distribution Modeling
+# FENE: Fish-conditioned Expert Network with Environmental Fields for Distribution Modeling
 
-Official implementation of **S-CENE**, an end-to-end deep learning framework for multi-species marine species distribution modeling (SDM) with:
+Official implementation of **FENE**, an end-to-end deep learning framework for multi-species marine species distribution modeling (SDM) with:
 - species-conditioned environmental responses (FiLM + learned species embeddings),
 - continuous spatial field modeling (Fourier positional encoding + SIREN),
 - key-feature transformation for dominant environmental drivers,
@@ -10,7 +10,7 @@ Official implementation of **S-CENE**, an end-to-end deep learning framework for
 ![Status](https://img.shields.io/badge/Code%20Release-In%20Progress-orange) The full implementation of S-CENE will be publicly released on GitHub upon acceptance of the manuscript.
 
 ## Paper
-**S-CENE: Species-Conditioned Expert Network with Environmental Fields for Species Distribution Modeling**  
+**FENE: Fish-conditioned Expert Network with Environmental Fields for Distribution Modeling**  
 Nafisa Nawar Tamzi, Md Motiur Rahman, Smriti Bhatt, Miad Faezipour  
 
 
@@ -30,10 +30,10 @@ This work uses a public dataset (8 Mediterranean Pelagic Commercial Fish Species
 
 ```yaml
 @misc{tamzi2026scene,
-  title   = {S-CENE: Species-Conditioned Expert Network with Environmental Fields for Species Distribution Modeling},
+  title   = {FENE: Fish-conditioned Expert Network with Environmental Fields for Distribution Modeling},
   author  = {Tamzi, Nafisa Nawar and Rahman, Md Motiur and Bhatt, Smriti and Faezipour, Miad},
   year    = {2026},
   note    = {Manuscript submitted for publication},
-  howpublished = {\url{https://github.com/ntamzi/S-CENE}}
+  howpublished = {\url{https://github.com/ntamzi/FENE}}
 }
 
