@@ -206,10 +206,16 @@ python baselines/decision_tree.py
 # Citation
 
 ```bibtex
-@article{tamzi2026FENE,
-  title={FENE: Species-Conditioned Expert Network with Environmental Fields for Species Distribution Modeling},
-  author={Tamzi, Nafisa Nawar and Rahman, Md Motiur and Bhatt, Smriti and Faezipour, Miad},
-  year={2026}
+@article{Tamzi2026FENE,
+  title   = {FENE: Fish-conditioned Expert Network Using Deep Learning for Multi-species Marine Distribution Modeling},
+  author  = {Tamzi, Nafisa Nawar and Rahman, Md Motiur and Bhatt, Smriti and Faezipour, Miad},
+  journal = {Computers and Electronics in Agriculture},
+  volume  = {249},
+  pages   = {111835},
+  year    = {2026},
+  issn    = {0168-1699},
+  doi     = {10.1016/j.compag.2026.111835},
+  url     = {https://www.sciencedirect.com/science/article/pii/S0168169926004308},
 }
 ```
 
