@@ -1,4 +1,4 @@
-# FENE / FENE
+# FENE
 
 Species-Conditioned Expert Network with Environmental Fields for Species Distribution Modeling.
 
