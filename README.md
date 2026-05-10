@@ -1,39 +1,102 @@
-# FENE: Fish-conditioned Expert Network with Environmental Fields for Distribution Modeling
+# FENE / FENE
 
-Official implementation of **FENE**, an end-to-end deep learning framework for multi-species marine species distribution modeling (SDM) with:
-- species-conditioned environmental responses (FiLM + learned species embeddings),
-- continuous spatial field modeling (Fourier positional encoding + SIREN),
-- key-feature transformation for dominant environmental drivers,
-- probabilistic Mixture-of-Experts head for uncertainty estimation,
-- explainability via SHAP.
+Species-Conditioned Expert Network with Environmental Fields for Species Distribution Modeling.
 
-![Status](https://img.shields.io/badge/Code%20Release-In%20Progress-orange) The full implementation of S-CENE will be publicly released on GitHub upon acceptance of the manuscript.
+This codebase implements the architecture described in the uploaded paper: species-conditioned FiLM feature extraction, Fourier/SIREN spatial encoding, key-feature transformation, mixture-of-experts prediction, uncertainty estimation, SHAP analysis, and baseline models.
 
-## Paper
-**FENE: Fish-conditioned Expert Network with Environmental Fields for Distribution Modeling**  
-Nafisa Nawar Tamzi, Md Motiur Rahman, Smriti Bhatt, Miad Faezipour  
+## Repository Structure
 
+```text
+FENE/
+├── config/config.yaml
+├── models/
+├── utils/
+├── baselines/
+├── train.py
+├── evaluate.py
+├── inference.py
+├── shap_analysis.py
+├── uncertainty_maps.py
+└── outputs/
+```
 
-## Key Results (from the paper)
-- Best overall performance vs. DT / RF / SVM / XGBoost on eight Mediterranean pelagic fish species.
-- Robust improvements under aggressive feature reduction.
-- Spatially explicit uncertainty maps for monitoring prioritization.
-- Species-specific drivers and hotspots via SHAP.
+## Installation
 
-## Data Availability
+```bash
+git clone https://github.com/YOUR_USERNAME/FENE.git
+cd FENE
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-This work uses a public dataset (8 Mediterranean Pelagic Commercial Fish Species) by Effrosynidis et al. (2020) for Mediterranean pelagic fish species distribution modeling. The dataset can be downloaded from: https://data.mendeley.com/datasets/rtphmvz5fj/1
+## Dataset Format
 
----
+Place your processed dataset at:
+
+```text
+data/processed/fish_dataset.csv
+```
+
+Expected columns:
+
+```text
+longitude, latitude, species, occurrence_probability, environmental_feature_1, environmental_feature_2, ...
+```
+
+You can edit column names in `config/config.yaml`.
+
+## Train FENE
+
+```bash
+python train.py
+```
+
+The best model is saved to:
+
+```text
+outputs/checkpoints/best_model.pth
+```
+
+## Evaluate
+
+```bash
+python evaluate.py
+```
+
+## Inference
+
+```bash
+python inference.py --input data/processed/new_samples.csv --output outputs/logs/inference_predictions.csv
+```
+
+## Uncertainty Map
+
+```bash
+python uncertainty_maps.py
+```
+
+## SHAP Analysis
+
+```bash
+python shap_analysis.py
+```
+
+## Run Baselines
+
+```bash
+python baselines/random_forest.py
+python baselines/xgboost_model.py
+python baselines/svm_model.py
+python baselines/decision_tree.py
+```
 
 ## Citation
 
-```yaml
-@misc{tamzi2026scene,
-  title   = {FENE: Fish-conditioned Expert Network with Environmental Fields for Distribution Modeling},
-  author  = {Tamzi, Nafisa Nawar and Rahman, Md Motiur and Bhatt, Smriti and Faezipour, Miad},
-  year    = {2026},
-  note    = {Manuscript submitted for publication},
-  howpublished = {\url{https://github.com/ntamzi/FENE}}
+```bibtex
+@article{tamzi2026FENE,
+  title={FENE: Species-Conditioned Expert Network with Environmental Fields for Species Distribution Modeling},
+  author={Tamzi, Nafisa Nawar and Rahman, Md Motiur and Bhatt, Smriti and Faezipour, Miad},
+  year={2026}
 }
-
+```
